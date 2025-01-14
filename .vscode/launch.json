@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DesicionServiceApplication",
+            "request": "launch",
+            "mainClass": "com.example.desicion_service.DesicionServiceApplication",
+            "projectName": ""
+        },
+        {
+            "type": "module"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ClientServiceApplication<Client-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.main.clientservice.ClientServiceApplication",
+            "projectName": "Client-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DesicionServiceApplication<desicion-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.desicion_service.DesicionServiceApplication",
+            "projectName": "desicion-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
