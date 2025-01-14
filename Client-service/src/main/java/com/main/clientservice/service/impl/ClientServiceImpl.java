@@ -56,4 +56,27 @@ public class ClientServiceImpl implements ClientService {
     public void deleteClient(Long id) {
         ClientRepository.deleteById(id);
     }
+
+    @Override
+    public Page<ClientEntityDto> getBlacklistedClients(PageableDto pageableDto) {
+        Page<ClientEntity> blacklistedClients = ClientRepository.findByBlacklistedTrue(pageableDto);
+        List<ClientEntityDto> clientDtos = ClientMapper.toDto(blacklistedClients.getContent());
+        return new PageImpl<>(clientDtos, pageableDto, blacklistedClients.getTotalElements());
+    }
+
+    @Override
+    public ClientEntityDto blacklistClient(Long id) {
+        ClientEntity clientEntity = ClientRepository.findById(id).orElseThrow(() -> new RuntimeException("Client not found"));
+        clientEntity.setBlacklisted(true);
+        ClientRepository.save(clientEntity);
+        return ClientMapper.toDto(clientEntity);
+    }
+
+    @Override
+    public ClientEntityDto unblacklistClient(Long id) {
+        ClientEntity clientEntity = ClientRepository.findById(id).orElseThrow(() -> new RuntimeException("Client not found"));
+        clientEntity.setBlacklisted(false);
+        ClientRepository.save(clientEntity);
+        return ClientMapper.toDto(clientEntity);
+    }
 }

@@ -55,4 +55,29 @@ public class ClientController {
         Page<ClientEntityDto> clientEntityDtos = clientService.getAllClient(pageableDto);
         return new ResponseEntity<>(clientEntityDtos, HttpStatus.OK);
     }
+
+    @GetMapping("/blacklisted")
+    public ResponseEntity<Page<ClientEntityDto>>  getBlacklistedClients(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) String sort
+    ) {
+        PageableDto pageableDto = new PageableDto(page, size, sort);
+        Page<ClientEntityDto> clientEntityDtos = clientService.getBlacklistedClients(pageableDto);
+        return new ResponseEntity<>(clientEntityDtos, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/blacklist")
+    public ResponseEntity<ApiResponse<ClientEntityDto>> blacklistClient(@PathVariable Long id) {
+        ClientEntityDto clientEntityDto = clientService.blacklistClient(id);
+        ApiResponse<ClientEntityDto> apiResponse= new ApiResponse<>(clientEntityDto, "Client blacklisted successfully", true);
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/unblacklist")
+    public ResponseEntity<ApiResponse<ClientEntityDto>> unblacklistClient(@PathVariable Long id) {
+        ClientEntityDto clientEntityDto = clientService.unblacklistClient(id);
+        ApiResponse<ClientEntityDto> apiResponse = new ApiResponse<>(clientEntityDto,"Client unblacklisted successfully", true);
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    }
 }

@@ -32,4 +32,7 @@ public class ClientEntity {
 
     @Column(precision = 10, scale = 2)
     private Number monthlySalary;
+
+    @Column(nullable = false)
+    private boolean blacklisted = false;
 }

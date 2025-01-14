@@ -10,4 +10,10 @@ public interface ClientService {
     ClientEntityDto getClientById(Long id);
     ClientEntityDto updateClient(ClientEntityDto ClientEntityDto);
     void deleteClient(Long id);
+
+    Page<ClientEntityDto> getBlacklistedClients(PageableDto pageableDto);
+
+    public ClientEntityDto blacklistClient(Long id);
+
+    public ClientEntityDto unblacklistClient(Long id);
 }

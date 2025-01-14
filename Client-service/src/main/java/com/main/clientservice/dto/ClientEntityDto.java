@@ -22,4 +22,5 @@ public class ClientEntityDto implements Serializable {
     private ContractType contractType;
     private Date dateOfBirth;
     private Number monthlySalary;
+    private Boolean blacklisted;
 }
