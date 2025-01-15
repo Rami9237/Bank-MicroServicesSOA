@@ -1,0 +1,53 @@
+{
+  "components": [
+    {
+      "label": "Client CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1afh5ri",
+        "columns": null
+      },
+      "id": "Field_1ajh3kc",
+      "key": "client_cin"
+    },
+    {
+      "label": "Credit Sum",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ypf7am",
+        "columns": null
+      },
+      "id": "Field_0toqjyy",
+      "key": "credit_sum"
+    },
+    {
+      "label": "Credit Duration",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_11akx8r",
+        "columns": null
+      },
+      "id": "Field_189f0bi",
+      "key": "credit_duration"
+    },
+    {
+      "label": "Submit Credit",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1jfepgi",
+        "columns": 4
+      },
+      "id": "Field_12ruif4"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0l99n1m",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 17
+}
