@@ -2,6 +2,7 @@
 package com.example.desicion_service.controller;
 
 import com.example.desicion_service.dto.DecisionDto;
+import com.example.desicion_service.dto.ScoringResponseWrapperDTO;
 import com.example.desicion_service.dto.ScoringResultDTO;
 import com.example.desicion_service.service.DecisionService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,6 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/api/decisions")
 public class DecisionController {
-
     private final RestTemplate restTemplate;
     private final DecisionService decisionService;
 
@@ -26,9 +26,9 @@ public class DecisionController {
         this.restTemplate = restTemplate;
     }
 
-    @PostMapping("/process")
-    public ResponseEntity<DecisionDto> processDecision(@RequestBody ScoringResultDTO scoringResult) {
-        ScoringResultDTO scoringResultDTO = fetchScoringResult(scoringResult.getDossierId());
+    @PostMapping("/process/{id}")
+    public ResponseEntity<DecisionDto> processDecision(@PathVariable String id) {
+        ScoringResultDTO scoringResultDTO = fetchScoringResult(id);
         DecisionDto decision = decisionService.processDecision(scoringResultDTO);
         return ResponseEntity.ok(decision);
     }
@@ -40,6 +40,16 @@ public class DecisionController {
 
     private ScoringResultDTO fetchScoringResult(String dossierId) {
         String endpoint = scoringServiceEndpoint + "/" + dossierId;
-        return restTemplate.getForObject(endpoint, ScoringResultDTO.class);
+        ResponseEntity<ScoringResponseWrapperDTO> response = restTemplate.getForEntity(
+                endpoint,
+                ScoringResponseWrapperDTO.class
+        );
+
+        if (response.getBody() != null && response.getBody().isSuccess()) {
+            return response.getBody().getData();
+        } else {
+            throw new RuntimeException("Failed to fetch scoring result: " +
+                    (response.getBody() != null ? response.getBody().getMessage() : "No response"));
+        }
     }
 }
