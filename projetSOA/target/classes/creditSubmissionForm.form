@@ -1,0 +1,33 @@
+{
+  "components": [
+    {
+      "label": "NAME",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_17kp7ws",
+        "columns": null
+      },
+      "id": "Field_0ptjwb1",
+      "key": "name"
+    },
+    {
+      "label": "FIRST NAME",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ea9103",
+        "columns": null
+      },
+      "id": "Field_08dgtfg",
+      "key": "name2"
+    }
+  ],
+  "type": "default",
+  "id": "creditSubmissionForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.31.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 18
+}

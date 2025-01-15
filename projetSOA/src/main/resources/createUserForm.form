@@ -1,0 +1,84 @@
+{
+  "components": [
+    {
+      "label": "CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0pjz7qd",
+        "columns": null
+      },
+      "id": "Field_1ox4aqd",
+      "key": "cin"
+    },
+    {
+      "label": "first name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0q4juua",
+        "columns": null
+      },
+      "id": "Field_1n07q90",
+      "key": "firstName"
+    },
+    {
+      "label": "last name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1o5uw2t",
+        "columns": null
+      },
+      "id": "Field_1hk10iq",
+      "key": "lastName"
+    },
+    {
+      "label": "Contract Type",
+      "values": [
+        {
+          "label": "CDI",
+          "value": "CDI"
+        },
+        {
+          "label": "CDD",
+          "value": "CDD"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_0mqsftm",
+        "columns": null
+      },
+      "id": "Field_0dyxpy8",
+      "key": "contractType"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Date",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_1vy8ib8",
+        "columns": null
+      },
+      "id": "Field_0rypxyu",
+      "key": "dateOfBirth"
+    },
+    {
+      "label": "monthly salary",
+      "type": "number",
+      "layout": {
+        "row": "Row_0dy2nv4",
+        "columns": null
+      },
+      "id": "Field_1dxvt8h",
+      "key": "monthlySalary"
+    }
+  ],
+  "type": "default",
+  "id": "createUserForm",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.31.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 18
+}
