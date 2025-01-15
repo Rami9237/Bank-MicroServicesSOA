@@ -5,7 +5,7 @@
       <bpmn:outgoing>SequenceFlow_1fp17al</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1fp17al" sourceRef="StartEvent_1" targetRef="say-hello" />
-    <bpmn:userTask id="say-hello" name="Say hello to&#10;root" camunda:formRef="createUserForm" camunda:formRefBinding="deployment" camunda:candidateUsers="root">
+    <bpmn:userTask id="say-hello" name="Register Client Fill Form" camunda:formRef="createUserForm" camunda:formRefBinding="deployment" camunda:candidateUsers="root">
       <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
       <bpmn:outgoing>Flow_0g30y8r</bpmn:outgoing>
     </bpmn:userTask>
@@ -31,6 +31,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_08mft2c_di" bpmnElement="say-hello">
         <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_13f3i3n_di" bpmnElement="Activity_13f3i3n">
         <dc:Bounds x="430" y="77" width="100" height="80" />
