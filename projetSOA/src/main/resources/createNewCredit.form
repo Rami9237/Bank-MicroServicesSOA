@@ -8,27 +8,36 @@
         "columns": null
       },
       "id": "Field_1ajh3kc",
-      "key": "client_cin"
+      "key": "clientCIN",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Credit Sum",
-      "type": "textfield",
+      "type": "number",
       "layout": {
-        "row": "Row_0ypf7am",
+        "row": "Row_1js3qu8",
         "columns": null
       },
-      "id": "Field_0toqjyy",
-      "key": "credit_sum"
+      "id": "Field_0ioum8l",
+      "key": "creditSum",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Credit Duration",
-      "type": "textfield",
+      "type": "number",
       "layout": {
-        "row": "Row_11akx8r",
+        "row": "Row_0dx69xw",
         "columns": null
       },
-      "id": "Field_189f0bi",
-      "key": "credit_duration"
+      "id": "Field_0mqticy",
+      "key": "creditDuration",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Submit Credit",
@@ -45,9 +54,9 @@
   "id": "Form_0l99n1m",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.30.0"
+    "version": "5.31.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.22.0",
-  "schemaVersion": 17
+  "schemaVersion": 18
 }
